@@ -9,11 +9,11 @@ app = Flask(__name__)
 CORS(app)  # Permitir CORS para o Kepler.gl acessar
 
 DB_CONFIG = {
-    "host": "xyz.render.com",
-    "database": "redes_transporte",
-    "user": "redes_transporte_user",
-    "password": "s7aPZEPuTVUftvfU0ZukJHeqvUQUcZiV",
-    "port": 5432
+    "host": os.getenv("DB_HOST"),
+    "database": os.getenv("DB_NAME"),
+    "user": os.getenv("DB_USER"),
+    "password": os.getenv("DB_PASS"),
+    "port": int(os.getenv("DB_PORT", 5432)) 
 }
 
 def get_connection():
