@@ -3,15 +3,17 @@ from flask_cors import CORS
 import psycopg2
 import json
 import datetime
+import os
 
 app = Flask(__name__)
 CORS(app)  # Permitir CORS para o Kepler.gl acessar
 
 DB_CONFIG = {
-    "host": "localhost",
+    "host": "xyz.render.com",
     "database": "redes_transporte",
-    "user": "postgres",
-    "password": "admin"
+    "user": "redes_transporte_user",
+    "password": "s7aPZEPuTVUftvfU0ZukJHeqvUQUcZiV",
+    "port": 5432
 }
 
 def get_connection():
